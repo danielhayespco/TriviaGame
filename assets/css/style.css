@@ -17,6 +17,7 @@ body {
 }
 
 #quiz {
+	clear:both;
     display:none;
 	margin-top: 50px;
 	font-size: x-large;
@@ -42,7 +43,12 @@ button {
 	color:white;
 }
 
-
+#timer {
+	font-size:90px;
+	color:white;
+	float:right;
+	margin-right:110px;
+}
 
 #prev {
     display:none;

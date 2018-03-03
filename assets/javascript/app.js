@@ -1,6 +1,5 @@
 // JavaScript Document
 $(document).ready(function(){
-  "use strict";
   
   var questions = [{
     question: "Who is the NBA's all-time assist leader?",
@@ -95,6 +94,7 @@ $(document).ready(function(){
     selections = [];
     displayNext();
     $('#start').hide();
+    $("#timer").html(count)
   });
   
   // Creates and returns the div that contains the questions and 
@@ -118,11 +118,38 @@ $(document).ready(function(){
 	
 	return qElement;
 
+
+
   }
 
-  // Creates 2 minute countdown
-
+  // Creates 1 minute countdown
   
+
+  var count=60;
+
+  $("#timer").html(count)
+
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+	function timer()
+	{
+  	count=count-1;
+  	if (count <= 0)
+  	{
+     clearInterval(counter);
+     //counter ended, do something here
+     alert("Time's up! Refresh the page and try again!")
+     return;
+  }
+
+  document.getElementById("timer").innerHTML=count
+
+
+
+  //$("#timer").text("count")
+
+
+}
   
   // Creates a list of the answer choices as radio inputs
   function createRadios(index) {
